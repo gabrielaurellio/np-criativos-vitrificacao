@@ -2,173 +2,391 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>NP Car Detail — Criativos Vitrificação</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NP Car Detail · Criativos para Aprovação</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;font-family:'Montserrat',sans-serif;padding:48px;color:#fff;min-height:100vh}
-h1{font-size:32px;font-weight:900;color:#C9A84C;letter-spacing:-0.5px;margin-bottom:8px}
-.subtitle{color:#666;font-size:15px;margin-bottom:48px}
-.section{margin-bottom:60px}
-.section-title{font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#555;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid #1a1a1a}
-.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:#080808;
+  font-family:'Montserrat',sans-serif;
+  color:#fff;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ─── HEADER ─── */
+.header{
+  background:linear-gradient(to bottom,#0d0d0d,#080808);
+  border-bottom:1px solid #1a1a1a;
+  padding:20px 20px 18px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.header-logo{height:40px;width:auto}
+.header-badge{
+  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:#C9A84C;
+  background:rgba(201,168,76,.1);
+  border:1px solid rgba(201,168,76,.25);
+  padding:6px 14px;border-radius:20px;
+}
+
+/* ─── HERO ─── */
+.hero{
+  padding:28px 20px 20px;
+  border-bottom:1px solid #111;
+}
+.hero-title{
+  font-size:22px;font-weight:900;
+  color:#fff;line-height:1.15;
+  margin-bottom:6px;
+  letter-spacing:-0.5px;
+}
+.hero-sub{
+  font-size:13px;color:#555;
+  margin-bottom:20px;line-height:1.5;
+}
+
+/* Info chips */
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;
+  color:#888;
+  background:#111;
+  border:1px solid #1e1e1e;
+  padding:6px 12px;border-radius:20px;
+}
+.chip span{color:#C9A84C}
+
+/* ─── SECTION ─── */
+.section{padding:28px 20px 8px}
+.section-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;
+}
+.section-icon{
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;flex-shrink:0;
+}
+.icon-feed{background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2)}
+.icon-story{background:rgba(79,195,247,.08);border:1px solid rgba(79,195,247,.18)}
+.section-title{
+  font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:#444;
+}
+.section-format{
+  font-size:14px;font-weight:800;color:#ddd;
+  margin-top:2px;
+}
+
+/* ─── GRID ─── */
+/* Feed: 2 col, proporção 1:1 */
+.grid-feed{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+/* Story: 3 col no mobile (mostrar mais cards de uma vez) */
+.grid-story{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+/* ─── CARD ─── */
 .card{
-  background:#111;border:1px solid #1e1e1e;border-radius:12px;
-  overflow:hidden;transition:border-color 0.2s,transform 0.2s;
-  cursor:pointer;text-decoration:none;display:block;
+  text-decoration:none;color:#fff;
+  display:block;
+  border-radius:12px;
+  overflow:hidden;
+  border:1.5px solid #1c1c1c;
+  transition:border-color .2s,transform .15s;
+  -webkit-tap-highlight-color:transparent;
+  background:#111;
 }
-.card:hover{border-color:#C9A84C;transform:translateY(-4px)}
-.card-preview{
-  height:160px;display:flex;align-items:center;justify-content:center;
-  font-size:40px;
-  background:linear-gradient(135deg,#161616,#111);
-  position:relative;overflow:hidden;
+.card:active{transform:scale(.97);border-color:#333}
+
+/* Thumbnail com aspect-ratio real */
+.thumb{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  background-size:cover;
+  background-repeat:no-repeat;
 }
-.card-preview::after{
-  content:attr(data-v);
-  position:absolute;bottom:10px;right:12px;
-  font-size:10px;font-weight:800;letter-spacing:3px;
-  color:rgba(201,168,76,0.4);text-transform:uppercase;
+/* Feed 1:1 */
+.thumb-1x1{padding-top:100%}
+/* Story 9:16 — mostrar porção superior (logotipo + headline visíveis) */
+.thumb-916{padding-top:155%}
+
+.thumb-bg{
+  position:absolute;inset:0;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center 30%;
 }
-.v1-preview{background:linear-gradient(135deg,#120808,#1a0a0a);color:#E63946}
-.v2-preview{background:linear-gradient(135deg,#080600,#100e00);}
-.v2-preview .gold-glow{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.5),transparent);box-shadow:0 0 40px rgba(201,168,76,0.3)}
-.v3-preview{background:linear-gradient(135deg,#060810,#080b14);color:#4FC3F7}
-.v4-preview{background:linear-gradient(135deg,#090900,#0f0e00)}
-.v5-preview{background:linear-gradient(90deg,#1c1c1c 50%,#070707 50%)}
-.card-info{padding:14px 16px}
-.card-label{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
-.card-desc{font-size:11px;color:#555;line-height:1.4}
-.badge{
-  display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;
-  padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;
+/* Overlay escuro suave */
+.thumb-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.15) 50%,rgba(0,0,0,.4) 100%);
 }
-.badge-1x1{background:rgba(201,168,76,0.1);color:#C9A84C;border:1px solid rgba(201,168,76,0.2)}
-.badge-916{background:rgba(79,195,247,0.08);color:#4FC3F7;border:1px solid rgba(79,195,247,0.2)}
-.stars-gold{color:#C9A84C;font-size:20px}
-.angle-tags{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
-.angle-tag{
-  background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);
-  border-radius:20px;padding:8px 18px;
-  font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:1px;
+
+/* Versão badge no canto superior esquerdo */
+.thumb-v{
+  position:absolute;top:8px;left:8px;
+  font-size:10px;font-weight:800;letter-spacing:1px;
+  padding:4px 10px;border-radius:8px;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(6px);
 }
-.info-bar{
-  background:#111;border:1px solid #1e1e1e;border-radius:12px;
-  padding:20px 24px;margin-bottom:40px;
-  display:flex;gap:32px;align-items:center;
+/* Título na parte de baixo da thumb */
+.thumb-label{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:10px 10px 8px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
 }
-.info-item{display:flex;flex-direction:column;gap:4px}
-.info-label{font-size:10px;font-weight:700;letter-spacing:3px;color:#555;text-transform:uppercase}
-.info-val{font-size:16px;font-weight:700;color:#ddd}
+.thumb-name{
+  font-size:11px;font-weight:800;
+  color:#fff;line-height:1.2;
+  display:block;
+}
+.thumb-angle{
+  font-size:9px;font-weight:600;
+  color:rgba(255,255,255,.5);
+  display:block;margin-top:2px;
+}
+
+/* Cores de acento por variação */
+.v1 .thumb-v{background:rgba(192,57,43,.8);color:#fff}
+.v2 .thumb-v{background:rgba(201,168,76,.8);color:#000}
+.v3 .thumb-v{background:rgba(79,195,247,.8);color:#000}
+.v4 .thumb-v{background:rgba(201,168,76,.8);color:#000}
+.v5 .thumb-v{background:rgba(86,54,209,.8);color:#fff}
+
+/* Ícone de "tap to view" */
+.tap-hint{
+  position:absolute;top:8px;right:8px;
+  width:26px;height:26px;border-radius:50%;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;
+}
+
+/* ─── FOOTER ─── */
+.footer{
+  padding:32px 20px 40px;
+  border-top:1px solid #111;
+  text-align:center;
+}
+.footer-logo{height:32px;width:auto;margin:0 auto 12px;display:block;opacity:.6}
+.footer-text{font-size:11px;color:#333;line-height:1.6}
+.footer-text a{color:#C9A84C;text-decoration:none}
+
+/* ─── TABLET+ ─── */
+@media(min-width:600px){
+  .header{padding:24px 32px}
+  .hero{padding:32px 32px 24px}
+  .section{padding:32px 32px 8px}
+  .grid-feed{grid-template-columns:repeat(5,1fr);gap:14px}
+  .grid-story{grid-template-columns:repeat(5,1fr);gap:14px}
+  .thumb-916{padding-top:177.8%}
+  .hero-title{font-size:28px}
+}
+@media(min-width:900px){
+  body{max-width:960px;margin:0 auto}
+  .header,.hero,.section,.footer{padding-left:32px;padding-right:32px}
+}
 </style>
 </head>
 <body>
-<h1>NP Car Detail · Criativos Vitrificação</h1>
-<p class="subtitle">5 variações × 2 formatos = 10 criativos estáticos para tráfego pago</p>
 
-<div class="info-bar">
-  <div class="info-item"><span class="info-label">Serviço</span><span class="info-val">Vitrificação Cerâmica</span></div>
-  <div class="info-item"><span class="info-label">Formatos</span><span class="info-val">1:1 (1080×1080) + 9:16 (1080×1920)</span></div>
-  <div class="info-item"><span class="info-label">CTA</span><span class="info-val">WhatsApp (48) 99170-6555</span></div>
-  <div class="info-item"><span class="info-label">Avaliação</span><span class="info-val"><span class="stars-gold">★★★★★</span> 4.9 Google</span></div>
-</div>
+<!-- HEADER -->
+<header class="header">
+  <img src="images/logo-np.webp" alt="NP Car Detail" class="header-logo">
+  <span class="header-badge">Para Aprovação</span>
+</header>
 
-<div class="angle-tags">
-  <span class="angle-tag">Ângulo 1 · Proteção do Investimento</span>
-  <span class="angle-tag">Ângulo 2 · Vaidade e Orgulho</span>
-  <span class="angle-tag">Ângulo 3 · Praticidade e Economia</span>
-</div>
-
-<div class="section">
-  <div class="section-title">Formato 1:1 — Feed (1080 × 1080 px)</div>
-  <div class="grid">
-    <a class="card" href="v1-1x1.html" target="_blank">
-      <div class="card-preview v1-preview" data-v="1:1">⚠</div>
-      <div class="card-info">
-        <div class="card-label">V1 · Perdendo Valor</div>
-        <div class="card-desc">Seu carro está perdendo valor agora. Ângulo urgência/investimento.</div>
-        <div class="badge badge-1x1">1080 × 1080</div>
-      </div>
-    </a>
-    <a class="card" href="v2-1x1.html" target="_blank">
-      <div class="card-preview v2-preview" data-v="1:1"><div class="gold-glow"></div></div>
-      <div class="card-info">
-        <div class="card-label">V2 · Concessionária</div>
-        <div class="card-desc">Como se tivesse saído da concessionária. Premium/aspiracional.</div>
-        <div class="badge badge-1x1">1080 × 1080</div>
-      </div>
-    </a>
-    <a class="card" href="v3-1x1.html" target="_blank">
-      <div class="card-preview v3-preview" data-v="1:1">💧</div>
-      <div class="card-info">
-        <div class="card-label">V3 · Sujeira Não Gruda</div>
-        <div class="card-desc">Praticidade, repelência, economia de manutenção.</div>
-        <div class="badge badge-1x1">1080 × 1080</div>
-      </div>
-    </a>
-    <a class="card" href="v4-1x1.html" target="_blank">
-      <div class="card-preview v4-preview" data-v="1:1">★</div>
-      <div class="card-info">
-        <div class="card-label">V4 · 4.9 Estrelas</div>
-        <div class="card-desc">Prova social em destaque. 100+ clientes satisfeitos.</div>
-        <div class="badge badge-1x1">1080 × 1080</div>
-      </div>
-    </a>
-    <a class="card" href="v5-1x1.html" target="_blank">
-      <div class="card-preview v5-preview" data-v="1:1">◐</div>
-      <div class="card-info">
-        <div class="card-label">V5 · Antes e Depois</div>
-        <div class="card-desc">Split visual — contraste antes/depois da vitrificação.</div>
-        <div class="badge badge-1x1">1080 × 1080</div>
-      </div>
-    </a>
+<!-- HERO -->
+<div class="hero">
+  <h1 class="hero-title">Criativos de<br>Vitrificação Cerâmica</h1>
+  <p class="hero-sub">5 variações · 2 formatos · Toque para visualizar em tela cheia</p>
+  <div class="chips">
+    <span class="chip">📐 <span>Feed 1:1</span> + Stories 9:16</span>
+    <span class="chip">💬 <span>WhatsApp</span> (48) 99170-6555</span>
+    <span class="chip">⭐ <span>4.9</span> Google</span>
   </div>
 </div>
 
+<!-- FEED 1:1 -->
 <div class="section">
-  <div class="section-title">Formato 9:16 — Stories / Reels (1080 × 1920 px)</div>
-  <div class="grid">
-    <a class="card" href="v1-9x16.html" target="_blank">
-      <div class="card-preview v1-preview" data-v="9:16">⚠</div>
-      <div class="card-info">
-        <div class="card-label">V1 · Perdendo Valor</div>
-        <div class="card-desc">Versão stories com bullets de problema→solução.</div>
-        <div class="badge badge-916">1080 × 1920</div>
+  <div class="section-header">
+    <div class="section-icon icon-feed">📐</div>
+    <div>
+      <div class="section-title">Formato Feed</div>
+      <div class="section-format">1:1 — 1080 × 1080 px</div>
+    </div>
+  </div>
+  <div class="grid-feed">
+
+    <a class="card v1" href="v1-1x1.html" target="_blank">
+      <div class="thumb thumb-1x1">
+        <div class="thumb-bg" style="background-image:url('images/photo2.jpg');background-position:center 35%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V1</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Perdendo Valor</span>
+          <span class="thumb-angle">Urgência</span>
+        </div>
       </div>
     </a>
-    <a class="card" href="v2-9x16.html" target="_blank">
-      <div class="card-preview v2-preview" data-v="9:16"><div class="gold-glow"></div></div>
-      <div class="card-info">
-        <div class="card-label">V2 · Concessionária</div>
-        <div class="card-desc">Versão stories com features destacadas em ouro.</div>
-        <div class="badge badge-916">1080 × 1920</div>
+
+    <a class="card v2" href="v2-1x1.html" target="_blank">
+      <div class="thumb thumb-1x1">
+        <div class="thumb-bg" style="background-image:url('images/photo2.jpg');background-position:center 25%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V2</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Concessionária</span>
+          <span class="thumb-angle">Premium</span>
+        </div>
       </div>
     </a>
-    <a class="card" href="v3-9x16.html" target="_blank">
-      <div class="card-preview v3-preview" data-v="9:16">💧</div>
-      <div class="card-info">
-        <div class="card-label">V3 · Sujeira Não Gruda</div>
-        <div class="card-desc">Versão stories com 3 benefícios detalhados.</div>
-        <div class="badge badge-916">1080 × 1920</div>
+
+    <a class="card v3" href="v3-1x1.html" target="_blank">
+      <div class="thumb thumb-1x1">
+        <div class="thumb-bg" style="background-image:url('images/photo_water.jpg');background-position:center 52%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V3</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Sujeira Não Gruda</span>
+          <span class="thumb-angle">Praticidade</span>
+        </div>
       </div>
     </a>
-    <a class="card" href="v4-9x16.html" target="_blank">
-      <div class="card-preview v4-preview" data-v="9:16">★</div>
-      <div class="card-info">
-        <div class="card-label">V4 · 4.9 Estrelas</div>
-        <div class="card-desc">Versão stories com badges de contagem e depoimento.</div>
-        <div class="badge badge-916">1080 × 1920</div>
+
+    <a class="card v4" href="v4-1x1.html" target="_blank">
+      <div class="thumb thumb-1x1">
+        <div class="thumb-bg" style="background-image:url('images/photo1.jpg');background-position:center 40%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V4</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">4.9 Estrelas</span>
+          <span class="thumb-angle">Prova Social</span>
+        </div>
       </div>
     </a>
-    <a class="card" href="v5-9x16.html" target="_blank">
-      <div class="card-preview v5-preview" data-v="9:16">◐</div>
-      <div class="card-info">
-        <div class="card-label">V5 · Antes e Depois</div>
-        <div class="card-desc">Versão stories com comparativo detalhado antes/depois.</div>
-        <div class="badge badge-916">1080 × 1920</div>
+
+    <a class="card v5" href="v5-1x1.html" target="_blank">
+      <div class="thumb thumb-1x1">
+        <div class="thumb-bg" style="background-image:url('images/photo_fiat.jpg');background-position:center 25%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V5</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Antes e Depois</span>
+          <span class="thumb-angle">Prova Visual</span>
+        </div>
       </div>
     </a>
+
   </div>
 </div>
+
+<!-- STORIES 9:16 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-icon icon-story">📱</div>
+    <div>
+      <div class="section-title">Formato Story / Reels</div>
+      <div class="section-format">9:16 — 1080 × 1920 px</div>
+    </div>
+  </div>
+  <div class="grid-story">
+
+    <a class="card v1" href="v1-9x16.html" target="_blank">
+      <div class="thumb thumb-916">
+        <div class="thumb-bg" style="background-image:url('images/photo2.jpg');background-position:center 30%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V1</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Perdendo Valor</span>
+          <span class="thumb-angle">Story</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card v2" href="v2-9x16.html" target="_blank">
+      <div class="thumb thumb-916">
+        <div class="thumb-bg" style="background-image:url('images/photo2.jpg');background-position:center 25%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V2</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Concessionária</span>
+          <span class="thumb-angle">Story</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card v3" href="v3-9x16.html" target="_blank">
+      <div class="thumb thumb-916">
+        <div class="thumb-bg" style="background-image:url('images/photo_water.jpg');background-position:center top"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V3</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Sujeira Não Gruda</span>
+          <span class="thumb-angle">Story</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card v4" href="v4-9x16.html" target="_blank">
+      <div class="thumb thumb-916">
+        <div class="thumb-bg" style="background-image:url('images/photo1.jpg');background-position:center 30%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V4</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">4.9 Estrelas</span>
+          <span class="thumb-angle">Story</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card v5" href="v5-9x16.html" target="_blank">
+      <div class="thumb thumb-916">
+        <div class="thumb-bg" style="background-image:url('images/photo_fiat.jpg');background-position:center 25%"></div>
+        <div class="thumb-ov"></div>
+        <span class="thumb-v">V5</span>
+        <span class="tap-hint">↗</span>
+        <div class="thumb-label">
+          <span class="thumb-name">Antes e Depois</span>
+          <span class="thumb-angle">Story</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <img src="images/logo-np.webp" alt="NP Car Detail" class="footer-logo">
+  <p class="footer-text">
+    Toque em qualquer criativo para ver em tela cheia.<br>
+    Dúvidas? Fale pelo <a href="https://wa.me/5548991706555">WhatsApp (48) 99170-6555</a>
+  </p>
+</div>
+
 </body>
 </html>

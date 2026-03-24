@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const API_KEY = 'USE_ENV_VAR_GEMINI_API_KEY';
+const API_KEY = process.env.GEMINI_API_KEY || ''; // Use variável de ambiente — NUNCA hardcode
 const OUTPUT_DIR = path.join(__dirname, 'images');
 
 const images = [

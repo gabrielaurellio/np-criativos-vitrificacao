@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>NP Car Detail — Criativos Vitrificação</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;font-family:'Montserrat',sans-serif;padding:48px;color:#fff;min-height:100vh}
+h1{font-size:32px;font-weight:900;color:#C9A84C;letter-spacing:-0.5px;margin-bottom:8px}
+.subtitle{color:#666;font-size:15px;margin-bottom:48px}
+.section{margin-bottom:60px}
+.section-title{font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:#555;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid #1a1a1a}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.card{
+  background:#111;border:1px solid #1e1e1e;border-radius:12px;
+  overflow:hidden;transition:border-color 0.2s,transform 0.2s;
+  cursor:pointer;text-decoration:none;display:block;
+}
+.card:hover{border-color:#C9A84C;transform:translateY(-4px)}
+.card-preview{
+  height:160px;display:flex;align-items:center;justify-content:center;
+  font-size:40px;
+  background:linear-gradient(135deg,#161616,#111);
+  position:relative;overflow:hidden;
+}
+.card-preview::after{
+  content:attr(data-v);
+  position:absolute;bottom:10px;right:12px;
+  font-size:10px;font-weight:800;letter-spacing:3px;
+  color:rgba(201,168,76,0.4);text-transform:uppercase;
+}
+.v1-preview{background:linear-gradient(135deg,#120808,#1a0a0a);color:#E63946}
+.v2-preview{background:linear-gradient(135deg,#080600,#100e00);}
+.v2-preview .gold-glow{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.5),transparent);box-shadow:0 0 40px rgba(201,168,76,0.3)}
+.v3-preview{background:linear-gradient(135deg,#060810,#080b14);color:#4FC3F7}
+.v4-preview{background:linear-gradient(135deg,#090900,#0f0e00)}
+.v5-preview{background:linear-gradient(90deg,#1c1c1c 50%,#070707 50%)}
+.card-info{padding:14px 16px}
+.card-label{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.card-desc{font-size:11px;color:#555;line-height:1.4}
+.badge{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;
+  padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;
+}
+.badge-1x1{background:rgba(201,168,76,0.1);color:#C9A84C;border:1px solid rgba(201,168,76,0.2)}
+.badge-916{background:rgba(79,195,247,0.08);color:#4FC3F7;border:1px solid rgba(79,195,247,0.2)}
+.stars-gold{color:#C9A84C;font-size:20px}
+.angle-tags{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
+.angle-tag{
+  background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);
+  border-radius:20px;padding:8px 18px;
+  font-size:12px;font-weight:700;color:#C9A84C;letter-spacing:1px;
+}
+.info-bar{
+  background:#111;border:1px solid #1e1e1e;border-radius:12px;
+  padding:20px 24px;margin-bottom:40px;
+  display:flex;gap:32px;align-items:center;
+}
+.info-item{display:flex;flex-direction:column;gap:4px}
+.info-label{font-size:10px;font-weight:700;letter-spacing:3px;color:#555;text-transform:uppercase}
+.info-val{font-size:16px;font-weight:700;color:#ddd}
+</style>
+</head>
+<body>
+<h1>NP Car Detail · Criativos Vitrificação</h1>
+<p class="subtitle">5 variações × 2 formatos = 10 criativos estáticos para tráfego pago</p>
+
+<div class="info-bar">
+  <div class="info-item"><span class="info-label">Serviço</span><span class="info-val">Vitrificação Cerâmica</span></div>
+  <div class="info-item"><span class="info-label">Formatos</span><span class="info-val">1:1 (1080×1080) + 9:16 (1080×1920)</span></div>
+  <div class="info-item"><span class="info-label">CTA</span><span class="info-val">WhatsApp (48) 99170-6555</span></div>
+  <div class="info-item"><span class="info-label">Avaliação</span><span class="info-val"><span class="stars-gold">★★★★★</span> 4.9 Google</span></div>
+</div>
+
+<div class="angle-tags">
+  <span class="angle-tag">Ângulo 1 · Proteção do Investimento</span>
+  <span class="angle-tag">Ângulo 2 · Vaidade e Orgulho</span>
+  <span class="angle-tag">Ângulo 3 · Praticidade e Economia</span>
+</div>
+
+<div class="section">
+  <div class="section-title">Formato 1:1 — Feed (1080 × 1080 px)</div>
+  <div class="grid">
+    <a class="card" href="v1-1x1.html" target="_blank">
+      <div class="card-preview v1-preview" data-v="1:1">⚠</div>
+      <div class="card-info">
+        <div class="card-label">V1 · Perdendo Valor</div>
+        <div class="card-desc">Seu carro está perdendo valor agora. Ângulo urgência/investimento.</div>
+        <div class="badge badge-1x1">1080 × 1080</div>
+      </div>
+    </a>
+    <a class="card" href="v2-1x1.html" target="_blank">
+      <div class="card-preview v2-preview" data-v="1:1"><div class="gold-glow"></div></div>
+      <div class="card-info">
+        <div class="card-label">V2 · Concessionária</div>
+        <div class="card-desc">Como se tivesse saído da concessionária. Premium/aspiracional.</div>
+        <div class="badge badge-1x1">1080 × 1080</div>
+      </div>
+    </a>
+    <a class="card" href="v3-1x1.html" target="_blank">
+      <div class="card-preview v3-preview" data-v="1:1">💧</div>
+      <div class="card-info">
+        <div class="card-label">V3 · Sujeira Não Gruda</div>
+        <div class="card-desc">Praticidade, repelência, economia de manutenção.</div>
+        <div class="badge badge-1x1">1080 × 1080</div>
+      </div>
+    </a>
+    <a class="card" href="v4-1x1.html" target="_blank">
+      <div class="card-preview v4-preview" data-v="1:1">★</div>
+      <div class="card-info">
+        <div class="card-label">V4 · 4.9 Estrelas</div>
+        <div class="card-desc">Prova social em destaque. 100+ clientes satisfeitos.</div>
+        <div class="badge badge-1x1">1080 × 1080</div>
+      </div>
+    </a>
+    <a class="card" href="v5-1x1.html" target="_blank">
+      <div class="card-preview v5-preview" data-v="1:1">◐</div>
+      <div class="card-info">
+        <div class="card-label">V5 · Antes e Depois</div>
+        <div class="card-desc">Split visual — contraste antes/depois da vitrificação.</div>
+        <div class="badge badge-1x1">1080 × 1080</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Formato 9:16 — Stories / Reels (1080 × 1920 px)</div>
+  <div class="grid">
+    <a class="card" href="v1-9x16.html" target="_blank">
+      <div class="card-preview v1-preview" data-v="9:16">⚠</div>
+      <div class="card-info">
+        <div class="card-label">V1 · Perdendo Valor</div>
+        <div class="card-desc">Versão stories com bullets de problema→solução.</div>
+        <div class="badge badge-916">1080 × 1920</div>
+      </div>
+    </a>
+    <a class="card" href="v2-9x16.html" target="_blank">
+      <div class="card-preview v2-preview" data-v="9:16"><div class="gold-glow"></div></div>
+      <div class="card-info">
+        <div class="card-label">V2 · Concessionária</div>
+        <div class="card-desc">Versão stories com features destacadas em ouro.</div>
+        <div class="badge badge-916">1080 × 1920</div>
+      </div>
+    </a>
+    <a class="card" href="v3-9x16.html" target="_blank">
+      <div class="card-preview v3-preview" data-v="9:16">💧</div>
+      <div class="card-info">
+        <div class="card-label">V3 · Sujeira Não Gruda</div>
+        <div class="card-desc">Versão stories com 3 benefícios detalhados.</div>
+        <div class="badge badge-916">1080 × 1920</div>
+      </div>
+    </a>
+    <a class="card" href="v4-9x16.html" target="_blank">
+      <div class="card-preview v4-preview" data-v="9:16">★</div>
+      <div class="card-info">
+        <div class="card-label">V4 · 4.9 Estrelas</div>
+        <div class="card-desc">Versão stories com badges de contagem e depoimento.</div>
+        <div class="badge badge-916">1080 × 1920</div>
+      </div>
+    </a>
+    <a class="card" href="v5-9x16.html" target="_blank">
+      <div class="card-preview v5-preview" data-v="9:16">◐</div>
+      <div class="card-info">
+        <div class="card-label">V5 · Antes e Depois</div>
+        <div class="card-desc">Versão stories com comparativo detalhado antes/depois.</div>
+        <div class="badge badge-916">1080 × 1920</div>
+      </div>
+    </a>
+  </div>
+</div>
+</body>
+</html>

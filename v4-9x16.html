@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>NP · V4 · Story 1080×1920</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#000}
+.ad{width:1080px;height:1920px;position:relative;font-family:'Montserrat',sans-serif;overflow:hidden}
+
+/* Foto full bleed */
+.photo{
+  position:absolute;inset:0;
+  background:url('images/photo1.jpg') center 30% / cover no-repeat;
+}
+
+/* Tint dourado quente */
+.ov-gold{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(20,15,0,.35) 0%,rgba(10,7,0,.15) 45%,transparent 70%);
+}
+
+/* Gradiente topo */
+.ov-top{
+  position:absolute;top:0;left:0;right:0;height:560px;
+  background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.5) 48%,rgba(0,0,0,.1) 80%,transparent 100%);
+}
+
+/* Gradiente fundo */
+.ov-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:1060px;
+  background:linear-gradient(to top,rgba(0,0,0,.99) 0%,rgba(2,1,0,.96) 38%,rgba(6,4,0,.8) 62%,rgba(10,7,0,.42) 80%,transparent 100%);
+}
+
+.ov-sides{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 88% 82% at 50% 42%,transparent 50%,rgba(0,0,0,.35) 100%);
+}
+
+/* ════════════════════════════════════
+   TOP BAR — FORA DA SAFE ZONE (y=45px)
+   ════════════════════════════════════ */
+.top-bar{
+  position:absolute;top:45px;left:80px;right:80px;
+  z-index:25;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo-img{
+  height:54px;width:auto;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.9));
+}
+
+/* Avaliação no top-bar — fora da safe zone OK */
+.rating-block{text-align:right}
+.rating-stars{color:#C9A84C;font-size:22px;letter-spacing:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.rating-num{font-size:18px;font-weight:700;color:#C9A84C;margin-top:2px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.rating-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+
+/* ════════════════════════════════════
+   BADGE DE ESTRELAS — centro visual (safe zone)
+   Posicionado no terço superior-médio da foto
+   para distribuir o conteúdo verticalmente
+   ════════════════════════════════════ */
+.stars-center{
+  position:absolute;top:340px;left:0;right:0;
+  display:flex;flex-direction:column;align-items:center;
+  z-index:20;
+  gap:10px;
+}
+.stars-big{
+  color:#C9A84C;font-size:64px;letter-spacing:10px;
+  text-shadow:0 0 40px rgba(201,168,76,.6),0 2px 12px rgba(0,0,0,.9);
+}
+.stars-score{
+  font-size:120px;font-weight:900;line-height:1;
+  color:#C9A84C;
+  text-shadow:0 0 60px rgba(201,168,76,.4),0 3px 30px rgba(0,0,0,1);
+}
+.stars-label{
+  font-size:17px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  text-shadow:0 1px 10px rgba(0,0,0,.9);
+}
+
+/* Linha separadora decorativa */
+.divider-line{
+  position:absolute;top:720px;left:80px;right:80px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent);
+  z-index:20;
+}
+
+/* ════════════════════════════════════
+   CONTEÚDO PRINCIPAL
+   ════════════════════════════════════ */
+.bottom{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:0 80px 400px;
+  z-index:20;
+}
+
+.accent-line{
+  width:64px;height:4px;
+  background:linear-gradient(90deg,#C9A84C,#E8C96A);
+  margin-bottom:26px;border-radius:2px;
+}
+
+h1{
+  font-size:78px;font-weight:900;color:#fff;
+  line-height:1.07;letter-spacing:-2px;
+  margin-bottom:22px;
+  text-shadow:0 3px 60px rgba(0,0,0,1),0 1px 12px rgba(0,0,0,1);
+}
+
+/* ✅ COR SÓLIDA — legível */
+h1 em{
+  font-style:normal;
+  color:#C9A84C;
+  text-shadow:0 3px 60px rgba(0,0,0,1),0 1px 12px rgba(0,0,0,1);
+}
+
+.sub{
+  font-size:24px;font-weight:400;
+  color:rgba(255,255,255,.72);line-height:1.5;
+  margin-bottom:42px;
+  text-shadow:0 2px 24px rgba(0,0,0,1);
+}
+
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  background:#25D366;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:26px;font-weight:700;
+  padding:26px;border-radius:60px;text-decoration:none;
+  box-shadow:0 10px 40px rgba(37,211,102,.45);
+}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="photo"></div>
+  <div class="ov-gold"></div>
+  <div class="ov-top"></div>
+  <div class="ov-bottom"></div>
+  <div class="ov-sides"></div>
+
+  <!-- Logo real NP — fora da safe zone OK -->
+  <div class="top-bar">
+    <img src="images/logo-np.webp" alt="NP Car Detail" class="logo-img">
+    <div class="rating-block">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-num">4.9</div>
+      <div class="rating-label">100+ no Google</div>
+    </div>
+  </div>
+
+  <!-- Badge central de estrelas — distribui conteúdo verticalmente -->
+  <div class="stars-center">
+    <div class="stars-big">★★★★★</div>
+    <div class="stars-score">4.9</div>
+    <div class="stars-label">avaliações no Google</div>
+  </div>
+
+  <!-- Linha separadora decorativa -->
+  <div class="divider-line"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="bottom">
+    <div class="accent-line"></div>
+    <h1>Mais de <em>100 carros</em><br>protegidos em<br>Palhoça.</h1>
+    <p class="sub">A vitrificação que os clientes aprovam e recomendam. Resultado real, sem filtro.</p>
+    <!-- CTA melhorado — removido "Ver se cabe no meu orçamento" -->
+    <a class="cta" href="https://wa.me/5548991706555?text=Oi%2C%20quero%20saber%20sobre%20vitrifica%C3%A7%C3%A3o">💬 Quero meu carro protegido</a>
+  </div>
+</div>
+<script>
+(function(){
+  var W=1080,H=1920;
+  var s=Math.min(window.innerWidth/W,window.innerHeight/H)*0.95;
+  if(s<1){
+    document.body.style.transformOrigin="top center";
+    document.body.style.transform="scale("+s+")";
+    var d=document.documentElement;
+    d.style.height=(H*s)+"px";
+    d.style.background="#111";
+    d.style.display="flex";
+    d.style.justifyContent="center";
+    d.style.overflow="hidden";
+  }
+})();
+</script>
+</body>
+</html>

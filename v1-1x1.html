@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>NP · V1 · Feed 1080×1080</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;overflow:hidden;background:#000}
+.ad{width:1080px;height:1080px;position:relative;font-family:'Montserrat',sans-serif;overflow:hidden}
+
+.photo{
+  position:absolute;inset:0;
+  background:url('images/photo2.jpg') center 35% / cover no-repeat;
+}
+/* Tint vermelho urgência */
+.ov-red{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(120,10,10,.5) 0%,rgba(60,5,5,.25) 50%,transparent 80%);
+}
+.ov-top{
+  position:absolute;top:0;left:0;right:0;height:300px;
+  background:linear-gradient(to bottom,rgba(0,0,0,.8) 0%,rgba(0,0,0,.3) 60%,transparent 100%);
+}
+.ov-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:480px;
+  background:linear-gradient(to top,rgba(8,0,0,.97) 0%,rgba(15,3,3,.88) 45%,rgba(20,5,5,.4) 75%,transparent 100%);
+}
+.ov-sides{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 88% 88% at 50% 50%,transparent 48%,rgba(0,0,0,.4) 100%);
+}
+
+.top-bar{
+  position:absolute;top:0;left:0;right:0;
+  padding:36px 52px;z-index:20;
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.logo-np{font-size:22px;font-weight:900;color:#C9A84C;letter-spacing:5px}
+.logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:4px;margin-top:3px}
+.rating{text-align:right}
+.rating-stars{color:#C9A84C;font-size:16px;letter-spacing:3px}
+.rating-num{font-size:13px;font-weight:700;color:#C9A84C;margin-top:2px}
+.rating-label{font-size:10px;color:rgba(255,255,255,.4);margin-top:1px}
+
+/* Warning tag */
+.warning-tag{
+  position:absolute;top:0;right:52px;
+  background:#C0392B;
+  color:#fff;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  padding:10px 20px;
+  clip-path:polygon(0 0,100% 0,100% 75%,50% 100%,0 75%);
+  z-index:21;
+}
+
+.bottom{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:0 52px 46px;z-index:20;
+}
+.accent-line{width:50px;height:3px;background:#C0392B;margin-bottom:20px;border-radius:2px}
+h1{font-size:58px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-1.5px;margin-bottom:14px}
+h1 em{color:#ff4444;font-style:normal}
+.sub{font-size:17px;font-weight:400;color:rgba(255,255,255,.62);line-height:1.5;margin-bottom:26px}
+.cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;
+  padding:16px 36px;border-radius:50px;text-decoration:none;
+  box-shadow:0 6px 28px rgba(37,211,102,.4);
+}
+.logo-img{height:36px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.9));}
+</style>
+<style id="np-polish">
+h1,h2{text-shadow:0 2px 28px rgba(0,0,0,1),0 1px 8px rgba(0,0,0,1)!important}
+h1 em,h1 span.bright,h1 span.muted{text-shadow:inherit!important}
+.sub{text-shadow:0 1px 12px rgba(0,0,0,1)!important}
+.top-bar *{text-shadow:0 1px 10px rgba(0,0,0,1)!important}
+.eyebrow{background:rgba(0,0,0,.55)!important;padding:5px 16px!important;border-radius:20px!important;display:inline-block!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important}
+.bul-text,.feat-text{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.bul-icon{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.rating-stars,.rating-num,.rating-label{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.r-sub,.r-val,.stars{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.logo-np,.logo-sub{text-shadow:0 2px 12px rgba(0,0,0,1)!important}
+.badge-label{text-shadow:0 1px 6px rgba(0,0,0,.8)!important}
+.hero-tag{text-shadow:0 1px 10px rgba(0,0,0,.95)!important}
+.water-badge{text-shadow:0 1px 6px rgba(0,0,0,.7)!important}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="photo"></div>
+  <div class="ov-red"></div>
+  <div class="ov-top"></div>
+  <div class="ov-bottom"></div>
+  <div class="ov-sides"></div>
+
+  <div class="top-bar">
+    <img src="images/logo-np.webp" alt="NP Car Detail" class="logo-img">
+    <div class="rating">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-num">4.9</div>
+      <div class="rating-label">100+ no Google</div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="accent-line"></div>
+    <h1>Seu carro está<br><em>perdendo valor</em><br>agora.</h1>
+    <p class="sub">Sol, chuva e poeira destroem a pintura silenciosamente.<br>Vitrificação cerâmica protege por anos — e custa menos que uma repintura.</p>
+    <a class="cta" href="https://wa.me/5548991706555?text=Oi%2C%20quero%20saber%20sobre%20vitrifica%C3%A7%C3%A3o">💬 Falar com Especialista</a>
+  </div>
+</div>
+<script>
+(function(){
+  var W=document.body.offsetWidth||1080,H=document.body.offsetHeight||1080;
+  var s=Math.min(window.innerWidth/W,window.innerHeight/H)*0.95;
+  if(s<1){
+    document.body.style.transformOrigin="top center";
+    document.body.style.transform="scale("+s+")";
+    var d=document.documentElement;
+    d.style.height=(H*s)+"px";
+    d.style.background="#111";
+    d.style.display="flex";
+    d.style.justifyContent="center";
+    d.style.overflow="hidden";
+  }
+})();
+</script>
+</body>
+</html>

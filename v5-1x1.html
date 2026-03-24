@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>NP · V5 · Feed 1080×1080</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;overflow:hidden;background:#000}
+.ad{width:1080px;height:1080px;position:relative;font-family:'Montserrat',sans-serif;overflow:hidden}
+
+/* Fundo: foto full bleed */
+.photo{
+  position:absolute;inset:0;
+  background:url('images/photo_fiat.jpg') center 25% / cover no-repeat;
+}
+/* Lado ANTES — metade esquerda desaturada/escura via backdrop-filter */
+.before-panel{
+  position:absolute;top:0;left:0;width:50%;bottom:0;
+  backdrop-filter:grayscale(1) brightness(.45) contrast(.85);
+  -webkit-backdrop-filter:grayscale(1) brightness(.45) contrast(.85);
+  z-index:2;
+}
+/* Linha divisória dourada */
+.divider{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;
+  background:linear-gradient(to bottom,transparent,#C9A84C 15%,#E8C96A 50%,#C9A84C 85%,transparent);
+  transform:translateX(-50%);z-index:10;
+  box-shadow:0 0 16px rgba(201,168,76,.5);
+}
+.divider-dot{
+  position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);
+  width:18px;height:18px;border-radius:50%;
+  background:radial-gradient(circle,#E8C96A,#C9A84C);
+  box-shadow:0 0 24px rgba(201,168,76,.7);z-index:11;
+}
+/* Labels ANTES / DEPOIS */
+.label{
+  position:absolute;top:130px;z-index:15;
+  font-size:12px;font-weight:800;letter-spacing:5px;text-transform:uppercase;
+  padding:7px 20px;border-radius:20px;
+}
+.label-before{left:26px;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15)}
+.label-after{right:26px;color:#C9A84C;border:1px solid rgba(201,168,76,.4)}
+
+/* Overlays de texto */
+.ov-top{
+  position:absolute;top:0;left:0;right:0;height:220px;
+  background:linear-gradient(to bottom,rgba(0,0,0,.72),transparent);
+  z-index:12;
+}
+.ov-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:460px;
+  background:linear-gradient(to top,rgba(0,0,0,.97) 0%,rgba(0,0,0,.84) 45%,rgba(0,0,0,.4) 72%,transparent 100%);
+  z-index:12;
+}
+
+.top-bar{
+  position:absolute;top:0;left:0;right:0;padding:36px 52px;z-index:20;
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.logo-np{font-size:22px;font-weight:900;color:#C9A84C;letter-spacing:5px}
+.logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:4px;margin-top:3px}
+.rating{text-align:right}
+.rating-stars{color:#C9A84C;font-size:16px;letter-spacing:3px}
+.rating-num{font-size:13px;font-weight:700;color:#C9A84C;margin-top:2px}
+
+.bottom{position:absolute;bottom:0;left:0;right:0;padding:0 52px 44px;z-index:20}
+.accent-line{width:60px;height:3px;background:linear-gradient(90deg,#C9A84C,#E8C96A);margin-bottom:18px;border-radius:2px}
+h1{font-size:52px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:12px}
+h1 .muted{color:#5636d1;text-shadow:0 2px 28px rgba(0,0,0,1),0 0 30px rgba(86,54,209,.4),0 1px 8px rgba(0,0,0,1);}
+h1 .bright{color:#fff}
+.sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:24px}
+.cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;
+  padding:16px 36px;border-radius:50px;text-decoration:none;
+  box-shadow:0 6px 28px rgba(37,211,102,.4);
+}
+.logo-img{height:36px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.9));}
+</style>
+<style id="np-polish">
+h1,h2{text-shadow:0 2px 28px rgba(0,0,0,1),0 1px 8px rgba(0,0,0,1)!important}
+h1 em,h1 span.bright,h1 span.muted{text-shadow:inherit!important}
+.sub{text-shadow:0 1px 12px rgba(0,0,0,1)!important}
+.top-bar *{text-shadow:0 1px 10px rgba(0,0,0,1)!important}
+.eyebrow{background:rgba(0,0,0,.55)!important;padding:5px 16px!important;border-radius:20px!important;display:inline-block!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important}
+.bul-text,.feat-text{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.bul-icon{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.rating-stars,.rating-num,.rating-label{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.r-sub,.r-val,.stars{text-shadow:0 1px 8px rgba(0,0,0,.9)!important}
+.logo-np,.logo-sub{text-shadow:0 2px 12px rgba(0,0,0,1)!important}
+.badge-label{text-shadow:0 1px 6px rgba(0,0,0,.8)!important}
+.hero-tag{text-shadow:0 1px 10px rgba(0,0,0,.95)!important}
+.water-badge{text-shadow:0 1px 6px rgba(0,0,0,.7)!important}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="photo"></div>
+  <div class="before-panel"></div>
+  <div class="divider"><div class="divider-dot"></div></div>
+  <div class="label label-before">ANTES</div>
+  <div class="label label-after">DEPOIS</div>
+  <div class="ov-top"></div>
+  <div class="ov-bottom"></div>
+
+  <div class="top-bar">
+    <img src="images/logo-np.webp" alt="NP Car Detail" class="logo-img">
+    <div class="rating">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-num">4.9</div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="accent-line"></div>
+    <h1><span class="muted">Isso não é photoshop.</span><br><span class="bright">É vitrificação.</span></h1>
+    <p class="sub">Uma sessão na NP e seu carro sai com brilho de showroom.<br>Resultado real. Sem filtro.</p>
+    <a class="cta" href="https://wa.me/5548991706555?text=Oi%2C%20quero%20saber%20sobre%20vitrifica%C3%A7%C3%A3o">💬 Agendar minha vitrificação</a>
+  </div>
+</div>
+<script>
+(function(){
+  var W=document.body.offsetWidth||1080,H=document.body.offsetHeight||1080;
+  var s=Math.min(window.innerWidth/W,window.innerHeight/H)*0.95;
+  if(s<1){
+    document.body.style.transformOrigin="top center";
+    document.body.style.transform="scale("+s+")";
+    var d=document.documentElement;
+    d.style.height=(H*s)+"px";
+    d.style.background="#111";
+    d.style.display="flex";
+    d.style.justifyContent="center";
+    d.style.overflow="hidden";
+  }
+})();
+</script>
+</body>
+</html>

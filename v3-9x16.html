@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>NP · V3 · Story 1080×1920</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#000}
+.ad{width:1080px;height:1920px;position:relative;font-family:'Montserrat',sans-serif;overflow:hidden}
+
+/* ════════════════════════════════════
+   Imagem da água suja — nova imagem do cliente
+   background-position: center top — mantém a parte
+   interessante do carro visível e a legenda original
+   da foto fica coberta pelo overlay escuro do rodapé
+   ════════════════════════════════════ */
+.photo{
+  position:absolute;inset:0;
+  background:url('images/photo_water.jpg') center top / cover no-repeat;
+}
+
+/* Tint azul — reforça o conceito "água" */
+.ov-blue{
+  position:absolute;inset:0;
+  background:linear-gradient(200deg,rgba(5,20,50,.45) 0%,rgba(2,10,30,.2) 50%,transparent 75%);
+}
+
+/* Gradiente topo */
+.ov-top{
+  position:absolute;top:0;left:0;right:0;height:520px;
+  background:linear-gradient(to bottom,rgba(0,0,0,.88) 0%,rgba(0,0,0,.5) 48%,rgba(0,0,0,.1) 78%,transparent 100%);
+}
+
+/* Gradiente fundo — cobre a legenda original da foto */
+.ov-bottom{
+  position:absolute;bottom:0;left:0;right:0;height:1080px;
+  background:linear-gradient(to top,rgba(0,0,5,.99) 0%,rgba(0,3,10,.97) 35%,rgba(0,5,15,.82) 60%,rgba(0,8,20,.42) 80%,transparent 100%);
+}
+
+.ov-sides{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 88% 82% at 50% 40%,transparent 50%,rgba(0,0,0,.35) 100%);
+}
+
+/* ════════════════════════════════════
+   TOP BAR — FORA DA SAFE ZONE (y=45px)
+   ════════════════════════════════════ */
+.top-bar{
+  position:absolute;top:45px;left:80px;right:80px;
+  z-index:25;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo-img{
+  height:54px;width:auto;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.9));
+}
+.rating{text-align:right}
+.rating-stars{color:#C9A84C;font-size:22px;letter-spacing:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.rating-num{font-size:18px;font-weight:700;color:#C9A84C;margin-top:2px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.rating-label{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+
+/* Badge água — início da safe zone */
+.water-badge{
+  position:absolute;top:295px;left:0;right:0;
+  display:flex;justify-content:center;
+  z-index:20;
+}
+.badge-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(0,5,20,.6);
+  border:1px solid rgba(79,195,247,.4);
+  border-radius:50px;
+  padding:12px 32px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.badge-icon{font-size:20px}
+.badge-text{
+  font-size:14px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:#4FC3F7;
+  text-shadow:0 1px 8px rgba(0,0,0,.9);
+}
+
+/* ════════════════════════════════════
+   CONTEÚDO PRINCIPAL
+   ════════════════════════════════════ */
+.bottom{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:0 80px 400px;
+  z-index:20;
+}
+
+.accent-line{
+  width:64px;height:4px;
+  background:linear-gradient(90deg,#4FC3F7,#81D4FA);
+  margin-bottom:26px;border-radius:2px;
+}
+
+.eyebrow{
+  font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  color:rgba(79,195,247,.85);
+  margin-bottom:18px;
+  text-shadow:0 1px 10px rgba(0,0,0,.95);
+}
+
+h1{
+  font-size:86px;font-weight:900;color:#fff;
+  line-height:1.07;letter-spacing:-2px;
+  margin-bottom:22px;
+  text-shadow:0 3px 60px rgba(0,0,0,1),0 1px 12px rgba(0,0,0,1);
+}
+
+/* ✅ COR SÓLIDA — texto legível sobre foto
+   Sem color:transparent / background-clip */
+h1 em{
+  font-style:normal;
+  color:#4FC3F7;
+  text-shadow:0 3px 60px rgba(0,0,0,1),0 0 40px rgba(79,195,247,.3),0 1px 12px rgba(0,0,0,1);
+}
+
+.sub{
+  font-size:24px;font-weight:400;
+  color:rgba(255,255,255,.72);line-height:1.5;
+  margin-bottom:30px;
+  text-shadow:0 2px 24px rgba(0,0,0,1);
+}
+
+.features{
+  display:flex;flex-direction:column;gap:14px;
+  margin-bottom:42px;
+}
+.feat{display:flex;align-items:center;gap:14px}
+.feat-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#4FC3F7;flex-shrink:0;
+  box-shadow:0 0 12px rgba(79,195,247,.6);
+}
+.feat-text{
+  font-size:21px;font-weight:600;
+  color:rgba(255,255,255,.88);
+  text-shadow:0 1px 12px rgba(0,0,0,.95);
+}
+
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  background:#25D366;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:26px;font-weight:700;
+  padding:26px;border-radius:60px;text-decoration:none;
+  box-shadow:0 10px 40px rgba(37,211,102,.45);
+}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="photo"></div>
+  <div class="ov-blue"></div>
+  <div class="ov-top"></div>
+  <div class="ov-bottom"></div>
+  <div class="ov-sides"></div>
+
+  <!-- Logo real NP + avaliação — fora da safe zone OK -->
+  <div class="top-bar">
+    <img src="images/logo-np.webp" alt="NP Car Detail" class="logo-img">
+    <div class="rating">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-num">4.9</div>
+      <div class="rating-label">100+ no Google</div>
+    </div>
+  </div>
+
+  <!-- Badge água no início da safe zone -->
+  <div class="water-badge">
+    <div class="badge-pill">
+      <span class="badge-icon">💧</span>
+      <span class="badge-text">Repelência Total · Palhoça SC</span>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="bottom">
+    <div class="eyebrow">Uma aplicação · Anos de proteção</div>
+    <div class="accent-line"></div>
+    <h1>Depois da<br>vitrificação:<br><em>sujeira não<br>gruda.</em></h1>
+    <p class="sub">Sem encerar, sem polir.<br>A chuva limpa o carro por você.</p>
+    <div class="features">
+      <div class="feat"><div class="feat-dot"></div><span class="feat-text">Repele água, lama e sujeira</span></div>
+      <div class="feat"><div class="feat-dot"></div><span class="feat-text">Proteção UV contra oxidação</span></div>
+      <div class="feat"><div class="feat-dot"></div><span class="feat-text">Brilho de showroom duradouro</span></div>
+    </div>
+    <a class="cta" href="https://wa.me/5548991706555?text=Oi%2C%20quero%20saber%20sobre%20vitrifica%C3%A7%C3%A3o">💬 Pedir orçamento agora</a>
+  </div>
+</div>
+<script>
+(function(){
+  var W=1080,H=1920;
+  var s=Math.min(window.innerWidth/W,window.innerHeight/H)*0.95;
+  if(s<1){
+    document.body.style.transformOrigin="top center";
+    document.body.style.transform="scale("+s+")";
+    var d=document.documentElement;
+    d.style.height=(H*s)+"px";
+    d.style.background="#111";
+    d.style.display="flex";
+    d.style.justifyContent="center";
+    d.style.overflow="hidden";
+  }
+})();
+</script>
+</body>
+</html>
